@@ -17,10 +17,16 @@ const Private = () => {
         })
     }, [])
 
+    const handleLogout = () => {
+        dispatch({type:"user_logged_out"})
+        navigate('/')
+    }
+
     return (
         <>
         <h1>This is private!</h1>
         <h2>only for the eyes of {store.user?.email}</h2>
+        <button onClick={handleLogout}>log out</button>
         </>
 
     )
